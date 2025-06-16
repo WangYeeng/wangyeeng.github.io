@@ -6,104 +6,125 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <link rel="stylesheet" href="jemdoc.css" type="text/css" />
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-<title>🌌 Dr. Ying Wang</title>
+<title> 🌌 Dr. Ying Wang</title>
 
 <style>
-/* Top Navigation */
+/* 顶部导航样式 */
 #top-nav {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
   align-items: center;
   background-color: #f8f8f8;
   padding: 10px 20px;
   border-bottom: 1px solid #ccc;
-  font-family: sans-serif;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-#top-nav .menu-item {
-  position: relative;
-  margin-right: 20px;
-  cursor: pointer;
-}
-#top-nav .menu-link {
-  text-decoration: none;
-  color: #0077cc;
-  font-weight: bold;
-  padding: 5px;
-  transition: color 0.3s ease;
-}
-#top-nav .menu-link:hover { color: #005299; }
-#top-nav .arrow { font-size: 0.8em; margin-left: 4px; }
-.dropdown-content {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 35px;
-  left: 0;
-  background-color: #ffffff;
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
-  min-width: 160px;
-  border-radius: 4px;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-}
-.dropdown-content a {
-  padding: 10px;
-  color: #0077cc;
-  text-decoration: none;
-  background-color: white;
-}
-.dropdown-content a:hover { background-color: #f1f1f1; }
-@media screen and (max-width: 600px) {
-  #top-nav {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .dropdown-content {
-    position: relative;
-    top: auto;
-    left: auto;
-    box-shadow: none;
-    border: 1px solid #ccc;
-  }
 }
 
-/* Back to top button */
-#myBtn {
-  display: none; position: fixed; bottom: 20px; right: 30px; z-index: 99; border: none; outline: none;
-  background-color: crimson; color: white; cursor: pointer; padding: 15px; border-radius: 10px;
+#top-nav .menu-category {
+  margin-right: 20px;
+  font-weight: bold;
+  color: #444;
 }
-#myBtn:hover { background-color: #555; }
+
+#top-nav .menu-item {
+  margin-right: 15px;
+}
+
+#top-nav .menu-item a {
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: normal;
+}
+
+#top-nav .menu-item a.current {
+  font-weight: bold;
+  color: crimson;
+}
+
+/* 手风琴面板样式 */
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+/* 返回顶部按钮样式 */
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: crimson;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
 </style>
 </head>
+
 <body>
 
-<!-- Top Navigation Bar -->
+<!-- 顶部导航栏 -->
 <div id="top-nav">
-  <div class="menu-item">
-    <a class="menu-link" href="index.html">Home</a>
-  </div>
-  <div class="menu-item" onclick="toggleDropdown()" id="researchToggle">
-    <span class="menu-link">Research <span class="arrow" id="arrow">\u25BC</span></span>
-    <div class="dropdown-content" id="researchDropdown">
-      <a href="publications.html">Publications</a>
-      <a href="patents.html">Patents</a>
-      <a href="awards.html">Awards</a>
-    </div>
-  </div>
+  <div class="menu-category">Home</div>
+  <div class="menu-item"><a href="index.html" class="current">About&nbsp;me</a></div>
+  <div class="menu-category">Research</div>
+  <div class="menu-item"><a href="publications.html">Publications</a></div>
+  <div class="menu-item"><a href="patents.html">Patents</a></div>
+  <div class="menu-item"><a href="awards.html">Awards</a></div>
 </div>
 
-<!-- Back to top button -->
-<button onclick="topFunction()" id="myBtn" title="\u56de\u9876\u90e8">Back to top</button>
+<!-- 返回顶部按钮 -->
+<button onclick="topFunction()" id="myBtn" title="回顶部">Back to top</button>
+
+<!-- 页面主要内容 -->
+<div id="layout-content">
 
 <div id="toptitle">
 <h1>Ying Wang</h1>
 </div>
+
 <table class="imgtable"><tr><td>
 <img src="https://wangyeeng.github.io/image/profile_wangying.png" alt="alt text" width="179px" height="179px" />&nbsp;</td>
-<td align="left"><p><a href="https://wangyeeng.github.io">Ying Wang (\u738b\u82f1)</a><br />
+<td align="left"><p><a href="https://wangyeeng.github.io">Ying Wang (王英)</a><br />
 <i>Ph.D., Postdoctoral Researcher</i> <br />
 <br />
 Pervasive Communication Research Center, <a href="https://www.pmlabs.com.cn/">Purple Mountain Laboratories (PML)</a> <br />
@@ -115,63 +136,78 @@ Address: Harbin Engineering University, China <br />
 </p>
 </td></tr></table>
 
-<h2> \ud83d\uddd3\ufe0f News</h2>
+<h2> 📆 News</h2>
 <ul>
-<li><p><font color=crimson>2025.06</font> - Dantong Chen's paper accepted by IEEE Vehicular Technology Conference.</p></li>
+<li><p><font color=crimson>2025.06</font> — Dantong Chen's paper “A novel base station deployment scheme for network planning in 6G outdoor hotspot scenarios” was accepted by IEEE VTC.</p></li>
 </ul>
 
-<h2> \ud83d\udcda Selected Publications</h2>
+<button class="accordion">👉 <b>Read More</b></button>
+<div class="panel">
+<ul>
+<li><p><font color=crimson>2024.06</font> — Shuaifei Chen was approved for the 75th general grant of the China Postdoctoral Science Foundation.</p></li>
+</ul>
+</div>
+
+<h2> 😉 About Me</h2>
+<p>Shuaifei Chen (Member, IEEE)</p>
+
+<h2> 📃 Selected Publications</h2>
 <ol>
-<li><p><b>S. Chen</b>, C.-X. Wang, ... "Channel map-based angle domain multiple access..." <i>IEEE J-STSP</i>, vol. 19, no. 2, pp. 366-380, Mar. 2025.</p></li>
+<li><p><b>S. Chen</b> et al., “<a href="https://shuaifeichen273.github.io/paper/2025_JSTSP_Channel_Map-Based_Angle_Domain_Multiple_Access_for_Cell-Free_Massive_MIMO_Communications.pdf">Channel map-based angle domain multiple access</a>,” <i><font color=crimson>IEEE JSTSP</font></i>, vol. 19, no. 2, pp. 366–380, Mar. 2025. [IF: 8.7]</p></li>
 </ol>
 
-<h2> \ud83c\udf93 Education</h2>
+<button class="accordion">👉 <b>Read More</b></button>
+<div class="panel">
+<ol start="6">
+<li><p><b>S. Chen</b> et al., “<a href="https://shuaifeichen273.github.io/paper/2018_CL_Effective%20Rate%20of%20MISO%20Systems%20Over%20Fisher–Snedecor%20F%20Fading%20Channels.pdf">Effective rate of MISO systems</a>,” <i><font color=crimson>IEEE Communications Letters</font></i>, vol. 22, no. 12, pp. 2619–2622, Dec. 2018.</p></li>
+</ol>
+</div>
+
+<h2> 🎓 Education </h2>
 <ul>
-<li><p>2018.09 - 2023.06, Ph.D., Beijing Jiaotong University, China</p></li>
+<li><p><font color=crimson>2018.09 - 2023.06</font> — <b>Ph.D.</b>, Information and Communication Engineering, <a href="https://www.seu.edu.cn/">Beijing Jiaotong University</a>, supervised by Prof. Jiayi Zhang.</p></li>
 </ul>
 
-<h2> \ud83c\udfeb Experiences</h2>
+<h2> 🏫 Experiences</h2>
 <ul>
-<li><p>2023.07 - present, Postdoctoral Researcher, Purple Mountain Laboratories</p></li>
+<li><p><font color=crimson>2023.07 - Present</font> — <b>Postdoctoral Researcher</b>, Purple Mountain Laboratories, supervised by Prof. Cheng-Xiang Wang.</p></li>
 </ul>
 
-<h2> \ud83d\uddc4\ufe0f Research Projects</h2>
+<h2> 🗄️ Research Projects</h2>
 <ul>
-<li><p>2025.01 - 2027.12, PI, NSFC Young Scientists Fund, Grant 62401643</p></li>
+<li><p><font color=crimson>2025.01 - 2027.12</font> — <b>PI</b>, Channel Map-Enabled Channel Estimation for 6G Ultra-Massive MIMO, NSFC Grant 62401643.</p></li>
 </ul>
 
-<h2> \ud83d\ude4b Student Guidance</h2>
+<h2> 🙋 Student Guidance</h2>
 <h4>Master Students</h4>
 <ul>
-<li><p>Dantong Chen, Network planning for 6G architectures.</p></li>
+<li><p>Dantong Chen — <font color=crimson>6G cellular architecture network planning</font>.</p></li>
 </ul>
 
-<hr />
-<center>&copy; 2025 Dr. Ying Wang.</center>
-<hr />
+</div>
 
+<hr />
+<center>&copy; 2025 Dr. Ying Wang. </center>
+
+<!-- JavaScript for Accordion -->
 <script>
-function toggleDropdown() {
-  const dropdown = document.getElementById("researchDropdown");
-  const arrow = document.getElementById("arrow");
-  if (dropdown.style.display === "flex") {
-    dropdown.style.display = "none";
-    arrow.textContent = "\u25BC";
-  } else {
-    dropdown.style.display = "flex";
-    arrow.textContent = "\u25B2";
-  }
-}
-window.addEventListener('click', function(e) {
-  if (!e.target.closest('#researchToggle')) {
-    const dropdown = document.getElementById("researchDropdown");
-    const arrow = document.getElementById("arrow");
-    if (dropdown) {
-      dropdown.style.display = "none";
-      arrow.textContent = "\u25BC";
+var acc = document.getElementsByClassName("accordion");
+var i;
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
     }
-  }
-});
+  });
+}
+</script>
+
+<!-- 返回顶部按钮功能 -->
+<script>
 window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
