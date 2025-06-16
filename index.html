@@ -97,10 +97,55 @@
   background-color: #555;
 }
 
-/* 鼠标悬停时显示菜单 */
+/* 保持水平排列的 dropdown 样式 */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  text-decoration: none;
+  color: #0077cc;
+  font-weight: normal;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0;
+}
+
+.dropbtn:hover {
+  font-weight: bold;
+  color: crimson;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+  z-index: 10;
+}
+
+.dropdown-content a {
+  color: #0077cc;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* 显示下拉菜单 */
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
 </style>
 </head>
 <body>
@@ -108,12 +153,14 @@
 <!-- 顶部导航栏 -->
 <div id="top-nav">
   <div class="menu-category">Home</div>
-  <div class="menu-category dropdown">
-  <button class="dropbtn">Research ▼</button>
-  <div class="dropdown-content">
-    <a href="publications.html">Publications</a>
-    <a href="patents.html">Patents</a>
-    <a href="awards.html">Awards</a>
+  <div class="menu-category">Research</div>
+  <div class="dropdown menu-item">
+    <a href="javascript:void(0)" class="dropbtn">Research ▼</a>
+    <div class="dropdown-content">
+      <a href="publications.html">Publications</a>
+      <a href="patents.html">Patents</a>
+      <a href="awards.html">Awards</a>
+    </div>
   </div>
 </div>
 
