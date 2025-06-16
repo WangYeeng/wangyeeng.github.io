@@ -9,6 +9,51 @@
 <title> 🌌 Dr. Ying Wang</title>
 
 <style>
+/* 下拉菜单样式 */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #f8f8f8;
+  color: #444;
+  padding: 8px 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.dropbtn:hover {
+  color: crimson;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #0077cc;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* 鼠标悬停时显示菜单 */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 /* 顶部导航样式 */
 #top-nav {
   display: flex;
@@ -105,10 +150,13 @@
 <!-- 顶部导航栏 -->
 <div id="top-nav">
   <div class="menu-category">Home</div>
-  <div class="menu-category">Research</div>
-  <div class="menu-item"><a href="publications.html">Publications</a></div>
-  <div class="menu-item"><a href="patents.html">Patents</a></div>
-  <div class="menu-item"><a href="awards.html">Awards</a></div>
+  <div class="menu-category dropdown">
+  <button class="dropbtn">Research ▼</button>
+  <div class="dropdown-content">
+    <a href="publications.html">Publications</a>
+    <a href="patents.html">Patents</a>
+    <a href="awards.html">Awards</a>
+  </div>
 </div>
 
 <!-- 返回顶部按钮 -->
