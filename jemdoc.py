@@ -17,7 +17,7 @@
 #
 # You should have received a copy of the GNU General Public License along with
 # this program. If not, see <http://www.gnu.org/licenses/>.
-#
+# We thank the authors for providing the open source code for my reference and study.
 # The LaTeX equation portions of this file were initially based on
 # latexmath2png, by Kamil Kisiel (kamil@kamikisiel.net).
 #
