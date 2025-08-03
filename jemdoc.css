@@ -387,9 +387,7 @@ table.imgtable, table.imgtable td {
   font-size: 20px;
   font-weight: bold;  /* 可选，加粗 */
 }
-#top-nav .menu-category a::after {
-  font-size: 18px;
-}
+
 #top-nav .menu-item {
   margin-right: 15px;
 }
