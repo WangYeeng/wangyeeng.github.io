@@ -365,3 +365,36 @@ table.imgtable, table.imgtable td {
     border: none;
     text-align: left;
 }
+/* 顶部横向导航栏 */
+#top-menu {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #f6f6f6;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 20px;
+    gap: 24px;
+    align-items: center;
+    font-family: Georgia, serif;
+}
+
+#top-menu .menu-category,
+#top-menu .menu-item {
+    font-size: 1.05em;
+    white-space: nowrap;
+}
+
+#top-menu a {
+    text-decoration: none;
+    color: #527bbd;
+}
+
+#top-menu a:hover {
+    border-bottom: 1px dotted gray;
+}
+
+#top-menu a.current {
+    font-weight: bold;
+    color: #022b6d;
+    border-bottom: 1px solid gray;
+}
+
