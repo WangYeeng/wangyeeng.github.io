@@ -387,7 +387,10 @@ table.imgtable, table.imgtable td {
   font-size: 20px;
   font-weight: bold;  /* 可选，加粗 */
 }
-
+.dropdown-icon {
+  font-size: 12px;
+  vertical-align: middle;
+}
 #top-nav .menu-item {
   margin-right: 15px;
 }
