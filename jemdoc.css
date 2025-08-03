@@ -381,7 +381,10 @@ table.imgtable, table.imgtable td {
   margin-right: 20px;
   font-weight: bold;
   color: #444;
-  font-size: 18px;  /* 设置分类项字体大小 */
+}
+#top-nav .menu-category a {
+  font-size: 20px;
+  font-weight: bold;  /* 可选，加粗 */
 }
 
 #top-nav .menu-item {
