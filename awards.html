@@ -11,16 +11,21 @@
 <body>
 <table summary="Table for page layout." id="tlayout">
 <tr valign="top">
-<td id="layout-menu">
-<div class="menu-category"><a href="index.html">Home</a></div>
-<div class="menu-category">Research</div>
-<div class="menu-item"><a href="publications.html">Publications</a></div>
-<div class="menu-item"><a href="patents.html">Patents</a></div>
-<div class="menu-item"><a href="awards.html" class="current">Awards</a></div>
-<div class="menu-item"><a href="others.html">Others</a></div>
-</td>
-<td id="layout-content">
-<div id="toptitle">
+<!-- 顶部导航栏 -->
+<div id="top-nav">
+  <div class="menu-category"><a href="index.html">Home</a></div>
+  <div class="dropdown menu-category">
+    <a href="javascript:void(0)" class="dropbtn"><b>Research</b> ▼</a>
+    <div class="dropdown-content">
+      <a href="publications.html">Publications</a>
+      <a href="patents.html">Patents</a>
+      <a href="awards.html">Awards</a>
+      <a href="others.html">Others</a>
+    </div>
+  </div>
+</div>
+<div id="layout-content">
+  <div id="toptitle">
 <h1>🏆 Awards</h1>
 </div>
 <ul>
@@ -36,3 +41,4 @@
 </table>
 </body>
 </html>
+
