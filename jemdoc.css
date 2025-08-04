@@ -13,7 +13,7 @@ body {
         background-attachment: fixed;
 	font-family: Georgia, serif;
 	padding-bottom: 8px;
-	margin: 2;
+	margin: 0;
 }
 
 #layout-menu {
@@ -510,7 +510,7 @@ table.imgtable, table.imgtable td {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-body, table, td, div {
+table, td, div {
   background-color: transparent !important;
 }
 
