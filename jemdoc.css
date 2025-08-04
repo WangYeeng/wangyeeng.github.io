@@ -510,7 +510,7 @@ table.imgtable, table.imgtable td {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-table, td{
+table, td, div{
   background-color: transparent !important;
 }
 
