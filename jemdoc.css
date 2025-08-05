@@ -374,10 +374,16 @@ table.imgtable, table.imgtable td {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
-  background-color: #f8f8f8;
+  background-color: #ffffff; /* 不透明白色背景 */
+  opacity: 1;                /* 明确不透明，确保遮住背景图 */
   padding: 10px 20px;
   border-bottom: 1px solid #ccc;
   font-size: 19px;
+  position: fixed;           /* 固定在顶部 */
+  top: 0;                    /* 确保从页面顶部开始 */
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 阴影区分导航栏与背景图 */
 }
 
 #top-nav .menu-category {
